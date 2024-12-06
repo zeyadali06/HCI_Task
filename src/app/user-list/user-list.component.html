@@ -1,0 +1,16 @@
+<div>
+  <h2>Registered Users</h2>
+  <ul>
+    <li *ngFor="let user of users">
+      <a
+        href="javascript:void(0)"
+        (click)="deleteUser(user.userName)"
+        [style.color]="user.password.length < 5 ? 'red' : 'black'"
+        style="text-decoration: none; cursor: pointer;"
+      >
+        {{ user.userName }}
+      </a>
+    </li>
+  </ul>
+  <p *ngIf="err" style="color: red;">{{ err }}</p>
+</div>
